@@ -1,19 +1,19 @@
 version: "3"
 services:
   mysql:
-    image: leafney/alpine-mariadb:latest
+    image: ansengup/mariadb
     container_name: mysql
     ports:
       - "3306:3306"
     networks:
       - mysql
     environment: 
-      - MYSQL_ROOT_PWD=123
-      - MYSQL_USER=dev
-      - MYSQL_USER_PWD=dev
-      - MYSQL_USER_DB=userdb
+      - MYSQL_ROOT_PWD=Welcome123
+      - MYSQL_USER=hub
+      - MYSQL_USER_PWD=hub
+      - MYSQL_USER_DB=hubdb
     volumes:
-      - $PWD/mysql_data:/var/lib/mysql
-
+      - $HOME/work/mysql_data:/var/lib/mysql
+      - $HOME/work:/work
 networks:
   mysql:
